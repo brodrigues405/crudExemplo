@@ -2,8 +2,10 @@ package entity;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import util.PessoaDao;
 
@@ -22,7 +24,8 @@ public class PessoaBean {
 	public void cadastrarPessoa(){
 		if(new PessoaDao().inserir(this.pessoa)){
 			 this.pessoa = new Pessoa();
-			 
+			 FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_INFO, "Inserido Com Sucesso!", null);
+			 FacesContext.getCurrentInstance().addMessage(null, fm);
 		}
 	}
 

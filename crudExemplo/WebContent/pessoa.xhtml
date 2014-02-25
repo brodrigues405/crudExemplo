@@ -10,7 +10,7 @@
 	<f:view>
 	
 	<h:form>
-	
+		<h:messages globalOnly="true"/>
 		<h:panelGrid columns="2">
 			<h:outputLabel value="Nome" />
 			<h:inputText value="#{pessoaBean.pessoa.nome}" />
@@ -24,9 +24,9 @@
 		</h:panelGrid>
 		
 			<h:commandButton value="Inserir" action="#{pessoaBean.cadastrarPessoa}" />
-		
+			
 	</h:form>
-
+		
  </f:view>
 </body> 
 </html>
